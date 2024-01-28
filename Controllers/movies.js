@@ -25,8 +25,8 @@ const getSingleMovie = async(req, res) => {
 
 const createMovie = async(req, res) => {
     try {
-        const { id, title, year, rating } = req.body;
-        const newMovie = { id, title, year, rating };
+        const { id, title, description, views, videoUrl, updatedAt, rating } = req.body;
+        const newMovie = { id, title, description, views, videoUrl, updatedAt, rating };
         allMovies.push(newMovie);
         res.status(201).send(newMovie);
     } catch (error) {
@@ -38,7 +38,7 @@ const createMovie = async(req, res) => {
 const updateMovie = async(req, res) => {
     try {
         const { id } = req.params;
-        const { title, year, rating } = req.body;
+        const { title, description, views, videoUrl, updatedAt, rating } = req.body;
         const movie = allMovies.find((movie) => String(movie.id) === String(id));
         if (movie) {
             if (title) movie.title = title;
