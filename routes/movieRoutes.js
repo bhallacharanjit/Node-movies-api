@@ -8,4 +8,5 @@ app.get("/movies", getAllMovies);
 app.get("/movies/:id", getSingleMovie)
 
 
+
 module.exports = app;
