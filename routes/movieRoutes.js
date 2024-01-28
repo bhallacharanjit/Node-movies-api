@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const {getAllMovies, getSingleMovie} = require("../Controllers/movies");
+const {getAllMovies, getSingleMovie, createMovie, updateMovie, deleteMovie} = require("../Controllers/movies");
 app.get("/movies", getAllMovies);
 
 //Get single movie
