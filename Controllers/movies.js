@@ -42,7 +42,10 @@ const updateMovie = async(req, res) => {
         const movie = allMovies.find((movie) => String(movie.id) === String(id));
         if (movie) {
             if (title) movie.title = title;
-            if (year) movie.year = year;
+            if (description) movie.description = description;
+            if (views) movie.views = views;
+            if (videoUrl) movie.videoUrl = videoUrl;
+            if (updatedAt) movie.updatedAt = updatedAt;
             if (rating) movie.rating = rating;
             res.status(200).send(movie);
         } else {
